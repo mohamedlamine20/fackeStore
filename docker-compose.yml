@@ -1,0 +1,9 @@
+version: '3.1'
+services:
+  facke-store: 
+    image: nginx:alpine
+    volumes:
+      - ./default.conf:/etc/nginx/default.d/default.conf
+      - ./dist:/usr/share/nginx/html
+    ports:
+      - "9090:80"

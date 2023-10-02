@@ -1,0 +1,11 @@
+<div class="grid grid-cols-3 gap-10">
+  <div  class="h-full flex flex-col justify-center items-center overflow-hidden shadow-lg" *ngFor="let product of products$ | async">
+      <img class="w-52" [src]="product.image" [alt]="product.title" />
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">{{ product.title }}</div>
+        <p class="text-gray-700 text-base">
+          {{ product.description }}...
+        </p>
+      </div>
+  </div>
+</div>

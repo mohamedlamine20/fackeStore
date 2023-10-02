@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: store-depl
+spec:
+  selector:
+    matchLabels:
+      app: store-depl
+  template:
+    metadata:
+      labels:
+        app: store-depl
+    spec:
+      containers:
+        - name: store
+          image: mohamed/fackestore-facke-store:latest
+
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: store--srv
+spec:
+  selector:
+    app: store
+  ports:
+    - name: store
+      port: 80
+      protocol: TCP
+      targetPort: 8080
